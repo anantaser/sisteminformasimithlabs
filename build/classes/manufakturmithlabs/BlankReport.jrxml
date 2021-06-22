@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7d0fdf85-4304-4dd5-aee5-fdf4f9f1396a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     bahan.`kdbarang` AS bahan_kdbarang,
+     bahan.`namabarang` AS bahan_namabarang,
+     bahan.`stock` AS bahan_stock,
+     bahan.`satuan` AS bahan_satuan,
+     bahan.`harga` AS bahan_harga,
+     bahan.`kategori` AS bahan_kategori
+FROM
+     `bahan` bahan]]>
+	</queryString>
+	<field name="bahan_kdbarang" class="java.lang.String"/>
+	<field name="bahan_namabarang" class="java.lang.String"/>
+	<field name="bahan_stock" class="java.lang.Float"/>
+	<field name="bahan_satuan" class="java.lang.String"/>
+	<field name="bahan_harga" class="java.lang.Float"/>
+	<field name="bahan_kategori" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement uuid="6c87b50d-df81-4bdd-a821-dbe298091823" x="47" y="15" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{bahan_kdbarang}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
