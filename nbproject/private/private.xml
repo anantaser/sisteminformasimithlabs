@@ -13,9 +13,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Login.java</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Koneksi.java</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Dashboard_1.java</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/PerencanaanProduksi.java</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Bahan.java</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/BahanBaku.java</file>
             <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Dashboard.java</file>
         </group>
     </open-files>
