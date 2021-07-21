@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import java.sql.SQLException;
 /**
  *
  * @author MithLabs
@@ -17,6 +18,7 @@ public class Koneksi {
     
     Connection con;
     Statement stm;
+    private Connection koneksi;
     
     public void config(){
         try{
@@ -28,4 +30,12 @@ public class Koneksi {
         }
     }
     
+    public Connection connect() {
+        try {
+            koneksi = DriverManager.getConnection("jdbc:mysql://localhost/manufakturmithlabs","root","");
+        } catch (SQLException ex){
+            System.out.println("Gagak Koneksi "+ex);
+        }
+        return koneksi;
+    }
 }

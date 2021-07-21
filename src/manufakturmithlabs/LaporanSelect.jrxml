@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="83b0fc4f-f099-4eab-aa2b-55c9f9ba11ec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="f0cdfa4d-3421-4a7f-a23c-60f515523f9d"/>
+	<parameter name="kd" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM produksi 
+INNER JOIN bahan_produksi 
+	ON produksi.kd_produksi = bahan_produksi.kd_produksi
+INNER JOIN produk
+	ON produksi.product_sku = produk.product_sku
+WHERE
+	produksi.product_sku = $P{kd}
+]]>
+	</queryString>
+	<field name="kd_produksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="start_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product_sku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product_qty" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="end_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_barang" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stock_used" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_biaya" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="product_cost" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="material_cost" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cogm" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cogs" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="margin" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="90cff779-f58c-4ce6-9e2a-508e161775f6" x="178" y="0" width="190" height="43"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="54379d39-7487-46e4-9355-63378cd64922" x="19" y="48" width="88" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Product Qty	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54379d39-7487-46e4-9355-63378cd64922" x="19" y="68" width="88" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Product Cost	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54379d39-7487-46e4-9355-63378cd64922" x="19" y="88" width="88" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Material Cost	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54379d39-7487-46e4-9355-63378cd64922" x="19" y="8" width="88" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kode Produk 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54379d39-7487-46e4-9355-63378cd64922" x="19" y="28" width="88" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Product Name	:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="978bffab-b468-4f7f-baef-9ea6960c4d2f" x="107" y="8" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{product_sku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="36dd3629-cf54-4102-b768-c1f3fdffeda9" x="107" y="28" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cb0359a3-5218-4bd2-8cab-5c1a9b146243" x="107" y="48" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{product_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7d44c13b-3efc-4edd-8278-6075dab33345" x="107" y="68" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{product_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c5f4646d-165d-480d-8af7-6cf3832197f9" x="107" y="88" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{material_cost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fa0408c1-d1b3-4b23-b171-001581518eee" x="241" y="91" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[total_biaya]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="155" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d4383232-1870-42d5-98ed-c18d2a968f95" x="119" y="21" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[stock_used]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="775bdd8d-dd40-4565-9267-336ee77eac2b" x="119" y="41" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{stock_used}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="01b25923-f6ae-4005-b1df-916b72bdae35" x="19" y="41" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kd_barang}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="267d6f10-ab80-42e7-b63f-aacadc63ec1f" x="19" y="21" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[kd_barang]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="64a485d1-8d93-4786-b5bd-624aff933e5d" x="241" y="1" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{total_biaya}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
