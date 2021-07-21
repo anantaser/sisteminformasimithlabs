@@ -205,8 +205,7 @@ public class ProsesManufaktur extends javax.swing.JFrame {
         }
     }
     
-    public void tampil_combo_bb()
-    {
+    public void tampil_combo_bb(){
         try {
         String sql = "SELECT `kdbarang` FROM `bahan` WHERE kategori = 'Bahan Baku'";
         rs = stat.executeQuery(sql);                               
