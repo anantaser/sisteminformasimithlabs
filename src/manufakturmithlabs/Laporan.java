@@ -174,6 +174,11 @@ public class Laporan extends javax.swing.JFrame {
         });
 
         jButton8.setText("Cetak");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -362,6 +367,23 @@ public class Laporan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.getMessage());
         } 
     }//GEN-LAST:event_bLaporanTransaksiBahanActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+         try {
+             String nama = "src/manufakturmithlabs/LaporanSelect.jasper";
+             Connection conn = new Koneksi().connect();
+             HashMap parameter = new HashMap();
+             parameter.put("kd",tKodeBarang.getText());
+             File report = new File(nama);
+             JasperReport jasperReport = (JasperReport) JRLoader.loadObject(report.getPath());
+             JasperPrint jasperprint = JasperFillManager.fillReport(jasperReport,parameter,conn);
+             JasperViewer.viewReport(jasperprint,false);
+             JasperViewer.setDefaultLookAndFeelDecorated(true);
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } 
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -60,7 +60,7 @@ FROM
 			<frame>
 				<reportElement uuid="56ebcb20-8729-4b6e-900b-0b511fabb725" mode="Opaque" x="0" y="70" width="802" height="32" forecolor="#000000" backcolor="#CC0000"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement uuid="7f09982a-7593-4f1e-84ed-508d8eb882ed" x="553" y="8" width="144" height="20" forecolor="#FFFFFF"/>
+					<reportElement uuid="7f09982a-7593-4f1e-84ed-508d8eb882ed" x="652" y="6" width="144" height="20" forecolor="#FFFFFF"/>
 					<textElement textAlignment="Right">
 						<font size="12"/>
 					</textElement>
@@ -200,12 +200,43 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
+		<band height="114" splitType="Stretch">
 			<line>
 				<reportElement uuid="6eb16ce1-30cc-43e8-b7f0-8f2f72af5d38" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="a7fd281f-3eb4-4359-9621-1511ca4f70eb" x="625" y="18" width="60" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Bogor ,]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="4fe578de-6b58-4dcf-9c0e-b3ee1f44bcf1" x="686" y="18" width="106" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="686" y="44" width="56" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Ananta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="659" y="65" width="106" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Operation Manager]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b9bc9ee6-98d2-4afc-9ba2-ef5f8a9f38a1" x="665" y="65" width="100" height="1"/>
 			</line>
 		</band>
 	</columnFooter>

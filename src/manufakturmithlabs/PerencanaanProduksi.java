@@ -66,7 +66,7 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
         tabPerencanaanProduksi.setModel(tabModeProduksi);
         
         try{
-            sql = "SELECT `kd_produksi`, `product_sku`, `product_name`, `product_qty`, `status` FROM `produksi`";
+            sql = "SELECT `kd_produksi`, `product_sku`, `product_name`, `product_qty`, `status` FROM `produksi` WHERE `status` = 'Plan';";
             rs = stat.executeQuery(sql);
             while(rs.next()){
                 String a = rs.getString("kd_produksi");

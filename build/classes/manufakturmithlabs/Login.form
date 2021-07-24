@@ -161,7 +161,7 @@
           <Font name="Times New Roman" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="MITHLABS | Sistem Manufaktur"/>
+        <Property name="text" type="java.lang.String" value="MITHLABS | Perakitan Tas"/>
       </Properties>
     </Component>
     <Component class="java.awt.Canvas" name="canvas1">

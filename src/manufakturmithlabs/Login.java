@@ -96,7 +96,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("MITHLABS | Sistem Manufaktur");
+        jLabel4.setText("MITHLABS | Perakitan Tas");
 
         bExit.setText("Exit");
         bExit.addActionListener(new java.awt.event.ActionListener() {

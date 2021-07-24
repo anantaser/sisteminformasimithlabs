@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d210754-feb5-4d35-8bc7-c7177b4832a0">
+	<property name="ireport.zoom" value="1.4641000000000022"/>
+	<property name="ireport.x" value="56"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -36,37 +39,37 @@
 	</background>
 	<title>
 		<band height="132" splitType="Stretch">
-			<image>
-				<reportElement uuid="32846b39-0ca1-4a3e-8257-bd5323fd4023" x="456" y="0" width="99" height="132"/>
-				<imageExpression><![CDATA["src/manufakturmithlabs/cherry.jpg"]]></imageExpression>
-			</image>
 			<frame>
 				<reportElement uuid="3c8cf720-1ba6-45dd-a972-6a7bf480f36b" mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000"/>
 				<staticText>
-					<reportElement uuid="f041d452-bdf0-4c83-b33d-6fc5fafa91a8" style="Title" x="0" y="0" width="370" height="66"/>
+					<reportElement uuid="f041d452-bdf0-4c83-b33d-6fc5fafa91a8" style="Title" x="11" y="0" width="370" height="66"/>
 					<textElement>
 						<font isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry Title]]></text>
+					<text><![CDATA[Laporan Bahan]]></text>
 				</staticText>
 				<staticText>
-					<reportElement uuid="e72c1124-0678-47e1-aabd-d8b23ea2c875" style="SubTitle" x="157" y="66" width="249" height="29"/>
+					<reportElement uuid="e72c1124-0678-47e1-aabd-d8b23ea2c875" style="SubTitle" x="10" y="66" width="249" height="29"/>
 					<textElement>
 						<font size="22" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
+					<text><![CDATA[CV Mithlabs]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement uuid="65ec8891-ab6f-430f-bf77-88db5e510d07" mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000"/>
+				<reportElement uuid="65ec8891-ab6f-430f-bf77-88db5e510d07" mode="Opaque" x="0" y="100" width="555" height="32" forecolor="#000000" backcolor="#CC0000"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement uuid="d52cd7f2-ff79-4928-bd36-48e35a04a517" x="307" y="12" width="144" height="20" forecolor="#FFFFFF"/>
+					<reportElement uuid="d52cd7f2-ff79-4928-bd36-48e35a04a517" x="405" y="7" width="144" height="20" forecolor="#FFFFFF"/>
 					<textElement textAlignment="Right">
 						<font size="12"/>
 					</textElement>
 					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 				</textField>
 			</frame>
+			<image>
+				<reportElement uuid="f98c58da-f27a-47bb-8a41-39a7612a9c11" x="451" y="0" width="104" height="95"/>
+				<imageExpression><![CDATA["C:\\Users\\Mithlabs\\Documents\\NetBeansProjects\\ManufakturMithlabs\\src\\manufakturmithlabs\\logomithlabs.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -168,35 +171,66 @@
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
+		<band height="92" splitType="Stretch">
 			<line>
 				<reportElement uuid="40d6c5a8-886d-4fb4-bf1e-546ba70451d7" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
+			<staticText>
+				<reportElement uuid="a7fd281f-3eb4-4359-9621-1511ca4f70eb" x="385" y="13" width="60" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Bogor ,]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="4fe578de-6b58-4dcf-9c0e-b3ee1f44bcf1" x="446" y="13" width="106" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="446" y="39" width="56" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Ananta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="419" y="60" width="106" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Operation Manager]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b9bc9ee6-98d2-4afc-9ba2-ef5f8a9f38a1" x="425" y="60" width="100" height="1"/>
+			</line>
 		</band>
 	</columnFooter>
 	<pageFooter>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement uuid="ecc29136-2866-4641-ad85-a4aa89a27141" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<reportElement uuid="951024fa-f3b8-466f-8875-5cf1deb21942" mode="Opaque" x="0" y="0" width="555" height="25" forecolor="#D0B48E" backcolor="#000000"/>
 				<textField evaluationTime="Report">
-					<reportElement uuid="f94eed98-84e3-4c95-b8d3-7dae95739f45" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<reportElement uuid="d668d945-ce28-4c2d-9a28-010b74292951" style="Column header" x="513" y="2" width="40" height="20" forecolor="#FFFFFF"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement uuid="276b7b51-4761-4ea3-b147-e88902042226" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<reportElement uuid="c9fb8d88-74b2-49da-ab1c-4fa36956df2c" style="Column header" x="433" y="2" width="80" height="20" forecolor="#FFFFFF"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 				</textField>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement uuid="fc75c3cf-9cc3-4c13-a3de-333beba411b7" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<reportElement uuid="a84f19ac-4f1f-4da1-8484-1576a7f604e9" style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
