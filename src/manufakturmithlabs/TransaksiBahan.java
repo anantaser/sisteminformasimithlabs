@@ -50,28 +50,30 @@ public class TransaksiBahan extends javax.swing.JFrame {
     }
     
     protected void bersih(){
-        tKodeBarang.setText("");
-        tKodeBarang.requestFocus();
+        tKodeTransaksi.setText("");
+        tKodeTransaksi.requestFocus();
     }
     
     
     protected void dataTableStock(){
-        Object[] Baris = {"Kode Barang","Nama Barang","Satuan","Stock","Harga","Kategori","Nama Supplier"};
+        Object[] Baris = {"ID Transaksi","Kode Barang","Nama Barang","Satuan","Stock","Harga","Kategori","Nama Supplier","Keterangan"};
         tabModeStock = new DefaultTableModel(null,Baris);
         tabStockBahan.setModel(tabModeStock);
         
         try{
-            sql = "SELECT * FROM bahan INNER JOIN trx_bahan ON bahan.kd_barang = trx_bahan.kd_barang  ";
+            sql = "SELECT * FROM bahan INNER JOIN trx_bahan ON bahan.kd_barang = trx_bahan.kd_barang";
             rs = stat.executeQuery(sql);
             while(rs.next()){
                 String a = rs.getString("kd_barang");
                 String b = rs.getString("nama_barang");
                 String c = rs.getString("satuan");
-                String d = rs.getString("stock");
+                String d = rs.getString("stock_trx");
                 String e = rs.getString("harga");
                 String f = rs.getString("kategori");
                 String g = rs.getString("supplier_name");
-                String[]data = {a,b,c,d,e,f,g};
+                String h = rs.getString("id_trx");
+                String i = rs.getString("keterangan");                
+                String[]data = {h,a,b,c,d,e,f,g,i};
                 tabModeStock.addRow(data);
             }
         } catch (Exception e){
@@ -96,7 +98,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabStockBahan = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        tKodeBarang = new javax.swing.JTextField();
+        tKodeTransaksi = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -141,7 +143,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabStockBahan);
 
-        jLabel2.setText("Kode Transaksi");
+        jLabel2.setText("ID Transaksi");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Tabel Transaksi Bahan");
@@ -216,7 +218,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tKodeTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
@@ -245,7 +247,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(tKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tKodeTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -302,7 +304,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
         int bar = tabStockBahan.getSelectedRow();
         String a = tabModeStock.getValueAt(bar,0).toString();
       
-        tKodeBarang.setText(a);
+        tKodeTransaksi.setText(a);
 
     }//GEN-LAST:event_tabStockBahanMouseClicked
 
@@ -374,7 +376,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField tKodeBarang;
+    private javax.swing.JTextField tKodeTransaksi;
     private javax.swing.JTable tabStockBahan;
     // End of variables declaration//GEN-END:variables
 }

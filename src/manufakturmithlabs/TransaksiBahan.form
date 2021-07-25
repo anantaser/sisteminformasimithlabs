@@ -109,7 +109,7 @@
                                       <Component id="bHome" min="-2" pref="97" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tKodeBarang" min="-2" pref="298" max="-2" attributes="0"/>
+                                  <Component id="tKodeTransaksi" min="-2" pref="298" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -147,7 +147,7 @@
                               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tKodeBarang" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="tKodeTransaksi" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="bClear" min="-2" pref="35" max="-2" attributes="0"/>
@@ -200,10 +200,10 @@
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Kode Transaksi"/>
+                <Property name="text" type="java.lang.String" value="ID Transaksi"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tKodeBarang">
+            <Component class="javax.swing.JTextField" name="tKodeTransaksi">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>

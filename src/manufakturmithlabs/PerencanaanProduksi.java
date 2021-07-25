@@ -53,6 +53,7 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
         tStockUsed.setText("");
         tSatuan.setText("");
         tHarga.setText("");
+        tStatusStock.setText("");
     }
     
     protected void bersih1(){
@@ -107,7 +108,7 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
     
     public void tampil_combo_bahan(){
         try {
-        String sql = "SELECT `kd_barang` FROM `bahan`";
+        String sql = "SELECT `kd_barang` FROM `bahan` ORDER BY 'kd_barang'";
         rs = stat.executeQuery(sql);                               
         while(rs.next()){
             Object[] obb = new Object[3];
@@ -124,18 +125,20 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
     public void tampil_combo_selected()
     {
         try {
-        String sql = "SELECT `nama_barang`, `satuan`, `harga` FROM `bahan` WHERE `kd_barang` = '"+cKodeBarang.getSelectedItem()+"'";  
+        String sql = "SELECT `nama_barang`, `satuan`, `harga`, `stock` FROM `bahan` WHERE `kd_barang` = '"+cKodeBarang.getSelectedItem()+"';";  
         rs = stat.executeQuery(sql);
         
         while(rs.next()){
-            Object[] obsel = new Object[3];
+            Object[] obsel = new Object[4];
             obsel[0]= rs.getString(1);
             obsel[1]= rs.getString(2);
             obsel[2]= rs.getString(3);
+            obsel[3]= rs.getString(4);
                        
             tNamaBarang.setText((String) obsel[0]);
             tSatuan.setText((String) obsel[1]);
             tHarga.setText((String) obsel[2]);
+            tStatusStock.setText((String) obsel[3]);
         }
         
         } catch (Exception e) {
@@ -170,6 +173,8 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         tHarga = new javax.swing.JTextField();
         bRefresh = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        tStatusStock = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         bDelete = new javax.swing.JButton();
         bUpdate = new javax.swing.JButton();
@@ -273,6 +278,11 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
             }
         });
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jLabel15.setText("Status Stock");
+
+        tStatusStock.setEditable(false);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -295,14 +305,16 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(37, 37, 37)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel15))
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tStockUsed)
                             .addComponent(tSatuan)
                             .addComponent(tHarga)
                             .addComponent(cKodeBarang, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tStatusStock, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 991, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(998, Short.MAX_VALUE))
@@ -317,6 +329,10 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(cKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(tStatusStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -689,6 +705,15 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
                 stat.setString(4,tKodeProduksi.getText());
                 stat.executeUpdate();
                 dataTableBahanProduksi();
+            }
+            {
+                sql = "UPDATE `bahan` SET `stock`=stock-? WHERE `kd_barang`=?";
+                java.sql.PreparedStatement stat = con.prepareStatement(sql);
+                stat.setString(2,cKodeBarang.getSelectedItem().toString());
+                //String stockUsed = tStockUsed.getText();
+                stat.setString(1,tStockUsed.getText()); 
+                stat.executeUpdate();
+                cKodeBarang.requestFocus();
                 bersih();
             }
             JOptionPane.showMessageDialog(null, "Data Bahan Produksi Berhasil di tambahkan");
@@ -739,10 +764,17 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.executeUpdate();
                 dataTableBahanProduksi();
-                bersih();
-                bersih1();
             }
-            JOptionPane.showMessageDialog(null, "Data Bahan Produksi Berhasil Dihapus");
+            {
+                sql = "UPDATE `bahan` SET `stock`=stock+? WHERE `kd_barang`=?";
+                java.sql.PreparedStatement stat = con.prepareStatement(sql);
+                stat.setString(2,cKodeBarang.getSelectedItem().toString());
+                stat.setString(1,tStockUsed.getText()); 
+                stat.executeUpdate();
+                cKodeBarang.requestFocus();
+                bersih();
+            }
+            JOptionPane.showMessageDialog(null, "Data Bahan Produksi Berhasil Dihapus (Stock dikembalikan)");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Data Gagal Disimpan"+e.getMessage());
         }
@@ -886,6 +918,7 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -908,6 +941,7 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
     private javax.swing.JTextField tNamaProduk;
     private javax.swing.JTextField tSKUProduk;
     private javax.swing.JTextField tSatuan;
+    private javax.swing.JTextField tStatusStock;
     private javax.swing.JTextField tStockUsed;
     private javax.swing.JTable tabBahanProduksi;
     private javax.swing.JTable tabPerencanaanProduksi;

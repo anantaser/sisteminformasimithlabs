@@ -60,6 +60,7 @@ public class Bahan extends javax.swing.JFrame {
         tKodeBarang.requestFocus();
         tNamaSupplier.setText("");
         tTanggalBeli.setDate(new Date());
+        tKeterangan.setText("");
     }
     
     
@@ -69,7 +70,7 @@ public class Bahan extends javax.swing.JFrame {
         tabStockBahan.setModel(tabModeStock);
         
         try{
-            sql = "SELECT * FROM bahan INNER JOIN trx_bahan ON bahan.kd_barang = trx_bahan.kd_barang  ";
+            sql = "SELECT * FROM `bahan` ORDER BY `kd_barang`";
             rs = stat.executeQuery(sql);
             while(rs.next()){
                 String a = rs.getString("kd_barang");
@@ -129,6 +130,8 @@ public class Bahan extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         bTrxBahan = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        tKeterangan = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -205,6 +208,11 @@ public class Bahan extends javax.swing.JFrame {
         cSatuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "meter", "yard", "pcs", "liter", "lembar" }));
 
         cKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bahan Baku", "Bahan Penolong" }));
+        cKategori.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cKategoriActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Tabel Barang");
@@ -249,6 +257,8 @@ public class Bahan extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel14.setText("Input dan Data Stock");
 
+        jLabel11.setText("Keterangan");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -281,14 +291,19 @@ public class Bahan extends javax.swing.JFrame {
                                         .addComponent(tKodeBarang)
                                         .addComponent(tStock)
                                         .addComponent(cSatuan, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
-                                .addGap(39, 39, 39)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel11)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel9))
+                                    .addGap(39, 39, 39)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(tNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(bAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,7 +344,11 @@ public class Bahan extends javax.swing.JFrame {
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel14)))
-                        .addGap(28, 28, 28)
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(tKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -349,11 +368,7 @@ public class Bahan extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(tHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(cKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(tNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -361,7 +376,11 @@ public class Bahan extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
                             .addComponent(tTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(tKeterangan, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(bUpdate)
                             .addComponent(bDelete)
@@ -417,31 +436,31 @@ public class Bahan extends javax.swing.JFrame {
 
     private void bUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bUpdateActionPerformed
         // TODO add your handling code here
-        try{
+        try{                       
              {
-                sql = "UPDATE `bahan` SET `nama_barang`=?,`satuan`=?,`stock`=?,`harga`=?,`kategori`=? WHERE `kd_barang`=?";
+                sql = "UPDATE `bahan` SET `nama_barang`=?,`satuan`=?,`stock`=stock+?,`harga`=?,`kategori`=?,`supplier_name`=? WHERE `kd_barang`=?";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
-                stat.setString(6,tKodeBarang.getText());
+                stat.setString(7,tKodeBarang.getText());
                 stat.setString(1,tNamaBarang.getText());
                 stat.setString(2,cSatuan.getSelectedItem().toString());            
                 stat.setString(3,tStock.getText());
                 stat.setString(4,tHarga.getText());
-                stat.setString(5,cKategori.getSelectedItem().toString());          
+                stat.setString(5,cKategori.getSelectedItem().toString()); 
+                stat.setString(6,tNamaSupplier.getText());  
                 stat.executeUpdate();
                 tKodeBarang.requestFocus();
                 dataTableStock();
              }
              {
-                sql = "INSERT INTO `trx_bahan`(`kd_barang`, `supplier_name`, `purch_date`, `stock_trx`) VALUES (?,?,?,?);";
+                sql = "INSERT INTO `trx_bahan`(`kd_barang`, `purch_date`, `stock_trx`,`keterangan`) VALUES (?,?,?,?);";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1,tKodeBarang.getText());
-                stat.setString(2,tNamaSupplier.getText());
                 SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf2.format(tTanggalBeli.getDate());
-                stat.setString(3, date);
-                stat.setString(4,tStock.getText());
+                stat.setString(2,date);
+                stat.setString(3,tStock.getText());
+                stat.setString(4,tKeterangan.getText());
                 stat.executeUpdate();
-                
              }
              bersih();
              JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
@@ -505,6 +524,17 @@ public class Bahan extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_bTrxBahanActionPerformed
 
+    private void cKategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cKategoriActionPerformed
+        // TODO add your handling code here:
+        if ((tKodeBarang.getText()) == ""){
+        if (cKategori.getSelectedItem().toString() == "Bahan Penolong" ){
+            tKodeBarang.setText("BP-");
+        } else{
+            tKodeBarang.setText("BB-");
+        }
+        }
+    }//GEN-LAST:event_cKategoriActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -551,6 +581,7 @@ public class Bahan extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cKategori;
     private javax.swing.JComboBox<String> cSatuan;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -567,6 +598,7 @@ public class Bahan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField tHarga;
+    private javax.swing.JTextField tKeterangan;
     private javax.swing.JTextField tKodeBarang;
     private javax.swing.JTextField tNamaBarang;
     private javax.swing.JTextField tNamaSupplier;

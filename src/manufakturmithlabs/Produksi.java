@@ -581,7 +581,7 @@ public class Produksi extends javax.swing.JFrame {
                 dataTableProduksiWIP();
              }
              {
-                sql = "INSERT INTO `produk`(`product_sku`, `product_name`, `product_qty`, `product_cost`, `material_cost`, `cogm`, `cogs`, `margin`) VALUES ('"+pSku+"','"+pName+"',"+pQty+",?,?,?,?,?);";
+                sql = "INSERT INTO `produk`(`product_sku`, `product_name`, `product_qty`, `product_cost`, `material_cost`, `cogm`, `cogs`, `margin`,`gudang`) VALUES ('"+pSku+"','"+pName+"',"+pQty+",?,?,?,?,?,'Bogor');";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);                
                 stat.setString(1,tBiayaProduksi.getText());
                 stat.setString(2,tBiayaBahanBaku.getText());
@@ -618,7 +618,7 @@ public class Produksi extends javax.swing.JFrame {
             Date b = new SimpleDateFormat("yyyy-MM-dd").parse((String)tabModeProduksiWIP.getValueAt(bar,4));
             tTanggalMulai.setDate(b);
         } catch (ParseException ex) {
-            Logger.getLogger(ProsesManufaktur.class.getName()).log(Level.SEVERE, null, ex);
+            
         }       
         tKodeProduksi.setText(a);
         try{
