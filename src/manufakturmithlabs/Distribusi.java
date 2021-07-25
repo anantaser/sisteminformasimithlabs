@@ -164,7 +164,6 @@ public class Distribusi extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         bHome = new javax.swing.JButton();
-        bBack1 = new javax.swing.JButton();
         tNamaBarang = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         tQtyAvail = new javax.swing.JTextField();
@@ -233,13 +232,6 @@ public class Distribusi extends javax.swing.JFrame {
         bHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bHomeActionPerformed(evt);
-            }
-        });
-
-        bBack1.setText("Back");
-        bBack1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bBack1ActionPerformed(evt);
             }
         });
 
@@ -312,7 +304,7 @@ public class Distribusi extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(bCetakSuratJalan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bCetakSuratJalan, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -371,12 +363,11 @@ public class Distribusi extends javax.swing.JFrame {
                                             .addComponent(bKirim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                         .addGap(26, 26, 26))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(bBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(54, 54, 54)))
                         .addGap(92, 92, 92)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
@@ -431,9 +422,7 @@ public class Distribusi extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bBack1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(163, 163, 163))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
@@ -492,12 +481,6 @@ public class Distribusi extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_bHomeActionPerformed
 
-    private void bBack1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBack1ActionPerformed
-        // TODO add your handling code here:
-        new Bahan().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_bBack1ActionPerformed
-
     private void cKodeBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cKodeBarangActionPerformed
         // TODO add your handling code here:
         tampil_combo_selected();
@@ -521,16 +504,17 @@ public class Distribusi extends javax.swing.JFrame {
                 stat.executeUpdate();
              }
              {
-                sql = "UPDATE `produk` SET `product_qty`=product_qty-?,`gudang`=? WHERE `product_sku`=?";
+                sql = "UPDATE `produk` SET `product_qty`=`product_qty`-? WHERE `product_sku`=?";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1,tQtySend.getText());
-                stat.setString(2,tNamaTujuan.getText());
-                stat.setString(3,cKodeBarang.getSelectedItem().toString());            
+                stat.setString(2,cKodeBarang.getSelectedItem().toString());            
                 stat.executeUpdate();
                 cKodeBarang.requestFocus();
                 dataTableKirim();
+                dataTableProduk();
              }
              bersih();
+             tampil_combo_selected();
              JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Data Gagal Disimpan"+e.getMessage());
@@ -544,7 +528,7 @@ public class Distribusi extends javax.swing.JFrame {
 
     private void bCetakSuratJalanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakSuratJalanActionPerformed
         // TODO add your handling code here:
-        new TransaksiBahan().setVisible(true);
+        new DistribusiJalan().setVisible(true);
         dispose();
     }//GEN-LAST:event_bCetakSuratJalanActionPerformed
 
@@ -591,7 +575,6 @@ public class Distribusi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bBack1;
     private javax.swing.JButton bCetakSuratJalan;
     private javax.swing.JButton bHome;
     private javax.swing.JButton bKirim;
