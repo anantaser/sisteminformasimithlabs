@@ -67,7 +67,7 @@ public class Bahan extends javax.swing.JFrame {
         tabStockBahan.setModel(tabModeStock);
         
         try{
-            sql = "SELECT * FROM bahan INNER JOIN trx_bahan ON bahan.kd_barang = trx_bahan.kd_barang ";
+            sql = "SELECT * FROM bahan INNER JOIN trx_bahan ON bahan.kd_barang = trx_bahan.kd_barang  ";
             rs = stat.executeQuery(sql);
             while(rs.next()){
                 String a = rs.getString("kd_barang");
@@ -436,6 +436,7 @@ public class Bahan extends javax.swing.JFrame {
                 stat.setString(4,tStock.getText());
                 stat.executeUpdate();
                 dataTableTrx();
+                dataTableStock();
              }
              bersih();
              JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");

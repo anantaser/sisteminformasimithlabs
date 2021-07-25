@@ -672,6 +672,7 @@ public class PerencanaanProduksi extends javax.swing.JFrame {
                 stat.executeUpdate();
                 dataTableBahanProduksi();
                 bersih();
+                bersih1();
             }
             JOptionPane.showMessageDialog(null, "Data Bahan Produksi Berhasil Dihapus");
         } catch (Exception e) {
