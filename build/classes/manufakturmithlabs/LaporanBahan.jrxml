@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d210754-feb5-4d35-8bc7-c7177b4832a0">
 	<property name="ireport.zoom" value="1.4641000000000022"/>
-	<property name="ireport.x" value="56"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
@@ -80,44 +80,44 @@
 			<staticText>
 				<reportElement uuid="e817a69d-7ad1-4e99-8b5b-efca2d692dc6" style="Column header" x="0" y="7" width="92" height="18" forecolor="#000000"/>
 				<textElement>
-					<font isBold="false"/>
+					<font isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[kd_barang]]></text>
+				<text><![CDATA[Kode Barang]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="c3b4cd64-4c14-474f-9e95-41fee26285e2" style="Column header" x="92" y="7" width="92" height="18" forecolor="#000000"/>
 				<textElement>
-					<font isBold="false"/>
+					<font isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[nama_barang]]></text>
+				<text><![CDATA[Nama Barang]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="0e6b4329-5f95-4fda-b6a0-de0de61a1579" style="Column header" x="184" y="7" width="92" height="18" forecolor="#000000"/>
 				<textElement>
-					<font isBold="false"/>
+					<font isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[satuan]]></text>
+				<text><![CDATA[Satuan]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="e3eadd31-7601-4e9b-a4fd-78566c603024" style="Column header" x="276" y="7" width="92" height="18" forecolor="#000000"/>
 				<textElement>
-					<font isBold="false"/>
+					<font isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[stock]]></text>
+				<text><![CDATA[Stock]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="8d399ca2-70e4-4cec-9b0e-5bdd978b0876" style="Column header" x="368" y="7" width="92" height="18" forecolor="#000000"/>
 				<textElement>
-					<font isBold="false"/>
+					<font isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[harga]]></text>
+				<text><![CDATA[Harga]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="3b7fa43d-ff9b-4215-9a9e-6901a06fd22a" style="Column header" x="460" y="7" width="92" height="18" forecolor="#000000"/>
 				<textElement>
-					<font isBold="false"/>
+					<font isBold="true" isUnderline="true"/>
 				</textElement>
-				<text><![CDATA[kategori]]></text>
+				<text><![CDATA[Kategori]]></text>
 			</staticText>
 		</band>
 	</columnHeader>

@@ -5,6 +5,7 @@
  */
 package manufakturmithlabs;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -14,9 +15,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 /**
  *
  * @author Mithlabs
@@ -50,8 +57,8 @@ public class TransaksiBahan extends javax.swing.JFrame {
     }
     
     protected void bersih(){
-        tKodeTransaksi.setText("");
-        tKodeTransaksi.requestFocus();
+        tIdTransaksi.setText("");
+        tIdTransaksi.requestFocus();
     }
     
     
@@ -98,7 +105,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabStockBahan = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        tKodeTransaksi = new javax.swing.JTextField();
+        tIdTransaksi = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -218,7 +225,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bHome, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tKodeTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(tIdTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
@@ -247,7 +254,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(tKodeTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tIdTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(bClear, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -303,13 +310,27 @@ public class TransaksiBahan extends javax.swing.JFrame {
         // TODO add your handling code here:
         int bar = tabStockBahan.getSelectedRow();
         String a = tabModeStock.getValueAt(bar,0).toString();
-      
-        tKodeTransaksi.setText(a);
+        tIdTransaksi.setText(a);
 
     }//GEN-LAST:event_tabStockBahanMouseClicked
 
     private void bTrxBahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTrxBahanActionPerformed
         // TODO add your handling code here:
+        // Cetak Laporan
+        try {
+             String nama = "src/manufakturmithlabs/CetakTandaTerimaBarang.jasper";
+             Connection conn = new Koneksi().connect();
+             HashMap parameter = new HashMap();
+             parameter.put("id",tIdTransaksi.getText());
+             File report = new File(nama);
+             JasperReport jasperReport = (JasperReport) JRLoader.loadObject(report.getPath());
+             JasperPrint jasperprint = JasperFillManager.fillReport(jasperReport,parameter,conn);
+             JasperViewer.viewReport(jasperprint,false);
+             JasperViewer.setDefaultLookAndFeelDecorated(true);
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } 
+        
     }//GEN-LAST:event_bTrxBahanActionPerformed
 
     private void bHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHomeActionPerformed
@@ -376,7 +397,7 @@ public class TransaksiBahan extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField tKodeTransaksi;
+    private javax.swing.JTextField tIdTransaksi;
     private javax.swing.JTable tabStockBahan;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,14 +12,15 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Produksi.java</file>
             <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/TransaksiBahan.java</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanDistribusi.jrxml</file>
             <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Distribusi.java</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanBahan.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/CetakSuratJalan.jrxml</file>
             <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Bahan.java</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Produk.java</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/DashProduksi.java</file>
             <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/DistribusiJalan.java</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/PerencanaanProduksi.java</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Laporan.java</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/CetakTandaTerimaBarang.jrxml</file>
         </group>
     </open-files>
 </project-private>

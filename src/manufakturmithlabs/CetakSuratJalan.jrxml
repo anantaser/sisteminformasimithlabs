@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd694c30-b264-446b-a1dd-30ecc702c4cf">
+	<property name="ireport.zoom" value="1.6105100000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="351"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     distribusi.`id` AS distribusi_id,
+     distribusi.`id_distribusi` AS distribusi_id_distribusi,
+     distribusi.`kode_barang` AS distribusi_kode_barang,
+     distribusi.`qty` AS distribusi_qty,
+     distribusi.`nama_tujuan` AS distribusi_nama_tujuan,
+     distribusi.`no_hp_tujuan` AS distribusi_no_hp_tujuan,
+     distribusi.`alamat_tujuan` AS distribusi_alamat_tujuan,
+     distribusi.`tanggal` AS distribusi_tanggal
+FROM
+     `distribusi` distribusi
+WHERE 
+distribusi.`id_distribusi` = $P{id}]]>
+	</queryString>
+	<field name="distribusi_id" class="java.lang.Integer"/>
+	<field name="distribusi_id_distribusi" class="java.lang.String"/>
+	<field name="distribusi_kode_barang" class="java.lang.String"/>
+	<field name="distribusi_qty" class="java.lang.Float"/>
+	<field name="distribusi_nama_tujuan" class="java.lang.String"/>
+	<field name="distribusi_no_hp_tujuan" class="java.lang.String"/>
+	<field name="distribusi_alamat_tujuan" class="java.lang.String"/>
+	<field name="distribusi_tanggal" class="java.lang.String"/>
+	<variable name="distribusi_qty_1" class="java.lang.Float" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{distribusi_qty}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ade4d101-0f2a-4f29-b79b-a1c085a5f8b6" x="82" y="30" width="310" height="58"/>
+				<textElement verticalAlignment="Top"/>
+				<text><![CDATA[Jl. Kol. Enjo Martadisastra No.6, RT.01/RW.05,
+Kedungbadak, Kec. Tanah Sereal, Kota Bogor, 
+Jawa Barat 16164
+0822-9923-8723]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="90b49bef-2641-4145-a544-c339a7a52cbd" x="82" y="6" width="153" height="24"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CV MITHLABS]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="0bc93674-3aa6-445d-84d0-c9e26a0c4498" x="6" y="6" width="76" height="71"/>
+				<imageExpression><![CDATA["C:\\Users\\Mithlabs\\Documents\\NetBeansProjects\\ManufakturMithlabs\\src\\manufakturmithlabs\\logomithlabs.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8b8c4bd8-888f-4f5c-9623-cec4a4cc7edf" x="219" y="0" width="154" height="25"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Surat Jalan]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="35848199-61a3-4047-bbd6-b2eaab8c65c0" x="237" y="19" width="117" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{distribusi_id_distribusi}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="131" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8ba86c19-0119-43ae-b58c-e720a15b5090" x="6" y="82" width="289" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Dengan ini kami kirimkan barang sebagai berikut :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0be23175-d3c5-4b97-b60f-cc547a3b18b3" x="6" y="10" width="100" height="15"/>
+				<textElement/>
+				<text><![CDATA[Kepada :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ee173f8d-d934-4a3b-bda7-171899d0d142" x="6" y="25" width="135" height="17"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{distribusi_nama_tujuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="606b151d-408a-4869-92a8-870504698f05" x="6" y="41" width="135" height="16"/>
+				<textElement>
+					<font isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{distribusi_no_hp_tujuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7af006b5-6033-427f-b01e-cc51cd95f9ef" x="6" y="57" width="135" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{distribusi_alamat_tujuan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5adcc944-4e59-4a73-a26f-9a669fa83866" x="28" y="111" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Kode Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5adcc944-4e59-4a73-a26f-9a669fa83866" x="160" y="111" width="100" height="20"/>
+				<textElement verticalAlignment="Bottom">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Jumlah Barang]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement uuid="27c4f534-bd2c-45de-aea6-7ee33311861e" x="28" y="1" width="130" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{distribusi_kode_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8a665886-7dac-4fa1-a5fd-dcce51387223" x="160" y="1" width="100" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{distribusi_qty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="190" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f82a1a21-1959-4bc9-aa5a-8f27786a5be8" x="18" y="99" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Head Officer]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="6d7b5f1a-3c68-4465-bcbb-dd78e0f5b4c7" x="47" y="68" width="113" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2f702c2d-21e6-4b1e-969c-cef0cde0a264" x="7" y="68" width="40" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bogor, ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b247bd21-717f-411c-8711-83dd5de9dcd6" x="6" y="38" width="536" height="20"/>
+				<textElement/>
+				<text><![CDATA[Demikian surat jalan barang ini dibuat sebagai bukti yang sah dan dapat digunakan untuk kepetningan tertentu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc5dd6f3-a201-4f5a-b259-835b41ef1fa9" x="442" y="99" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Penerima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2f702c2d-21e6-4b1e-969c-cef0cde0a264" x="373" y="68" width="163" height="20"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diterima Tanggal : ..........................]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="191b923b-d2c5-4e3c-8573-91b10255eba2" x="71" y="12" width="100" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{distribusi_qty_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="cbfc6293-6bcb-4ea9-b40d-f0327557668f" x="7" y="12" width="64" height="18"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Barang :]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="6" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

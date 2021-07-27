@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6901885-ddb7-4c7c-ae2b-329b5fceedfd">
+	<property name="ireport.zoom" value="1.210000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Heading 1" fontSize="16" isBold="true"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     trx_bahan.`id_trx` AS trx_bahan_id_trx,
+     trx_bahan.`kd_barang` AS trx_bahan_kd_barang,
+     trx_bahan.`purch_date` AS trx_bahan_purch_date,
+     trx_bahan.`stock_trx` AS trx_bahan_stock_trx,
+     trx_bahan.`keterangan` AS trx_bahan_keterangan
+FROM
+     `trx_bahan` trx_bahan
+
+WHERE 
+trx_bahan.`id_trx` = $P{id}]]>
+	</queryString>
+	<field name="trx_bahan_id_trx" class="java.lang.Integer"/>
+	<field name="trx_bahan_kd_barang" class="java.lang.String"/>
+	<field name="trx_bahan_purch_date" class="java.lang.String"/>
+	<field name="trx_bahan_stock_trx" class="java.lang.Float"/>
+	<field name="trx_bahan_keterangan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<image>
+				<reportElement uuid="0bc93674-3aa6-445d-84d0-c9e26a0c4498" x="0" y="0" width="76" height="87"/>
+				<imageExpression><![CDATA["C:\\Users\\Mithlabs\\Documents\\NetBeansProjects\\ManufakturMithlabs\\src\\manufakturmithlabs\\logomithlabs.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="90b49bef-2641-4145-a544-c339a7a52cbd" x="76" y="8" width="153" height="32"/>
+				<textElement verticalAlignment="Top">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CV MITHLABS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ade4d101-0f2a-4f29-b79b-a1c085a5f8b6" x="76" y="32" width="310" height="55"/>
+				<textElement verticalAlignment="Top"/>
+				<text><![CDATA[Jl. Kol. Enjo Martadisastra No.6, RT.01/RW.05,
+Kedungbadak, Kec. Tanah Sereal, Kota Bogor, 
+Jawa Barat 16164
+0822-9923-8723]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="90b49bef-2641-4145-a544-c339a7a52cbd" x="-299" y="5" width="153" height="24"/>
+				<textElement verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CV MITHLABS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="1839b805-fd03-4aff-a04d-137985bcf427" style="Heading 1" x="176" y="0" width="215" height="25"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Surat Tanda Terima Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1839b805-fd03-4aff-a04d-137985bcf427" style="Heading 1" x="229" y="25" width="70" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nomor : STB/]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a9c98416-6e92-4979-bd33-624abca28fee" x="295" y="25" width="100" height="14"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{trx_bahan_id_trx}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="212" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8ba86c19-0119-43ae-b58c-e720a15b5090" x="9" y="7" width="289" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Dengan ini kami terima barang sebagai berikut :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1d1d0cd5-8338-42aa-9329-68a95a403a65" x="9" y="54" width="100" height="17"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Barang 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1d1d0cd5-8338-42aa-9329-68a95a403a65" x="-366" y="34" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1d1d0cd5-8338-42aa-9329-68a95a403a65" x="-366" y="31" width="100" height="17"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Barang :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d2690192-a9c7-4bf1-a145-d6468b767a5e" x="9" y="40" width="100" height="14"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[SKU Barang 	:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2be1317d-e7cb-459a-b303-30b445085a16" x="9" y="71" width="100" height="16"/>
+				<textElement/>
+				<text><![CDATA[Jumlah		:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="61ab7729-abdb-4d7b-8136-cd54b2d15dd2" x="109" y="40" width="120" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trx_bahan_kd_barang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d3769805-c315-426d-ab21-1b138e5969a8" x="109" y="71" width="120" height="16"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trx_bahan_stock_trx}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b247bd21-717f-411c-8711-83dd5de9dcd6" x="9" y="103" width="536" height="20"/>
+				<textElement/>
+				<text><![CDATA[Demikian surat tanda terima barang ini dibuat sebagai bukti yang sah dan dapat digunakan untuk kepetningan tertentu]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="6d7b5f1a-3c68-4465-bcbb-dd78e0f5b4c7" x="50" y="133" width="113" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2f702c2d-21e6-4b1e-969c-cef0cde0a264" x="10" y="133" width="40" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bogor, ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f82a1a21-1959-4bc9-aa5a-8f27786a5be8" x="21" y="164" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Penerima]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc5dd6f3-a201-4f5a-b259-835b41ef1fa9" x="445" y="164" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Yang Menyerahkan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="6" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="6" splitType="Stretch"/>
+	</summary>
+</jasperReport>
