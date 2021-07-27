@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -47,6 +48,7 @@ public class Laporan extends javax.swing.JFrame {
         stat = DB.stm;
         
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);     
         dataTableBarang();
     }
     

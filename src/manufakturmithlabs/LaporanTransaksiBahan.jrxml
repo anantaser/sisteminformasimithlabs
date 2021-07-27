@@ -51,9 +51,9 @@
 					<reportElement uuid="7585d28a-826e-4815-b07f-b6e3a121a86b" style="Title" x="0" y="0" width="370" height="66"/>
 					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
 					<textElement verticalAlignment="Bottom">
-						<font isBold="false"/>
+						<font size="34" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Laporan Produksi]]></text>
+					<text><![CDATA[Laporan Transaksi Bahan]]></text>
 				</staticText>
 				<staticText>
 					<reportElement uuid="4d450f2b-1be6-4f40-b6ec-d92d5f95d32c" style="SubTitle" x="396" y="20" width="316" height="29"/>
