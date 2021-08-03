@@ -121,13 +121,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="338" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="506" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="bPerencanaanProduksi" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="bProduksi" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="bProduk" min="-2" pref="150" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -142,6 +144,7 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="bPerencanaanProduksi" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
                               <Component id="bProduksi" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
+                              <Component id="bProduk" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -164,6 +167,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bProduksiActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bProduk">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Produk"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bProdukActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

@@ -126,7 +126,7 @@ public class Bahan extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        bAdd1 = new javax.swing.JButton();
+        bAdd = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         bTrxBahan = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
@@ -223,10 +223,10 @@ public class Bahan extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logomithlabs100.png"))); // NOI18N
         jLabel13.setToolTipText("");
 
-        bAdd1.setText("Add");
-        bAdd1.addActionListener(new java.awt.event.ActionListener() {
+        bAdd.setText("Add");
+        bAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAdd1ActionPerformed(evt);
+                bAddActionPerformed(evt);
             }
         });
 
@@ -306,7 +306,7 @@ public class Bahan extends javax.swing.JFrame {
                                         .addComponent(tTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
-                        .addComponent(bAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bUpdate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -385,7 +385,7 @@ public class Bahan extends javax.swing.JFrame {
                             .addComponent(bUpdate)
                             .addComponent(bDelete)
                             .addComponent(bClear)
-                            .addComponent(bAdd1))
+                            .addComponent(bAdd))
                         .addGap(28, 28, 28)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -514,9 +514,40 @@ public class Bahan extends javax.swing.JFrame {
 
     }//GEN-LAST:event_tabStockBahanMouseClicked
 
-    private void bAdd1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAdd1ActionPerformed
+    private void bAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAdd1ActionPerformed
+        try{
+             {
+                sql = "INSERT INTO `bahan`(`kd_barang`, `nama_barang`, `satuan`, `stock`, `harga`, `kategori`) VALUES (?,?,?,?,?,?);";
+                java.sql.PreparedStatement stat = con.prepareStatement(sql);
+                stat.setString(1,tKodeBarang.getText());
+                stat.setString(2,tNamaBarang.getText());
+                stat.setString(3,cSatuan.getSelectedItem().toString());            
+                stat.setString(4,tStock.getText());
+                stat.setString(5,tHarga.getText());
+                stat.setString(6,cKategori.getSelectedItem().toString());          
+                stat.executeUpdate();
+                tKodeBarang.requestFocus();
+                dataTableStock();
+             }
+             {
+                sql = "INSERT INTO `trx_bahan`(`kd_barang`, `supplier_name`, `purch_date`, `stock_trx`) VALUES (?,?,?,?);";
+                java.sql.PreparedStatement stat = con.prepareStatement(sql);
+                stat.setString(1,tKodeBarang.getText());
+                stat.setString(2,tNamaSupplier.getText());
+                SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+                String date = sdf2.format(tTanggalBeli.getDate());
+                stat.setString(3, date);
+                stat.setString(4,tStock.getText());
+                stat.executeUpdate();
+                dataTableStock();
+             }
+             bersih();
+             JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Data Gagal Disimpan"+e.getMessage());
+        }
+    }//GEN-LAST:event_bAddActionPerformed
 
     private void bTrxBahanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTrxBahanActionPerformed
         // TODO add your handling code here:
@@ -572,7 +603,7 @@ public class Bahan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bAdd1;
+    private javax.swing.JButton bAdd;
     private javax.swing.JButton bClear;
     private javax.swing.JButton bDelete;
     private javax.swing.JButton bHome;

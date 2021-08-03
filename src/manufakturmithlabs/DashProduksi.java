@@ -96,6 +96,7 @@ public class DashProduksi extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         bPerencanaanProduksi = new javax.swing.JButton();
         bProduksi = new javax.swing.JButton();
+        bProduk = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -128,17 +129,26 @@ public class DashProduksi extends javax.swing.JFrame {
             }
         });
 
+        bProduk.setText("Produk");
+        bProduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bProdukActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 338, Short.MAX_VALUE)
+            .addGap(0, 506, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(bPerencanaanProduksi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(bProduksi, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(bProduk, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
@@ -149,7 +159,8 @@ public class DashProduksi extends javax.swing.JFrame {
                     .addContainerGap()
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(bPerencanaanProduksi, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bProduksi, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bProduksi, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bProduk, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
@@ -281,6 +292,12 @@ public class DashProduksi extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_bHomeActionPerformed
 
+    private void bProdukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProdukActionPerformed
+        // TODO add your handling code here:
+        new Produk().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_bProdukActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -321,6 +338,7 @@ public class DashProduksi extends javax.swing.JFrame {
     private javax.swing.JTable TabProWIP;
     private javax.swing.JButton bHome;
     private javax.swing.JButton bPerencanaanProduksi;
+    private javax.swing.JButton bProduk;
     private javax.swing.JButton bProduksi;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
