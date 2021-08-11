@@ -219,7 +219,7 @@ WHERE
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="84" splitType="Stretch">
+		<band height="121" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="2f702c2d-21e6-4b1e-969c-cef0cde0a264" x="390" y="0" width="40" height="20"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -235,17 +235,14 @@ WHERE
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="c2f969ff-bdec-4975-a6d4-6f4224c18c69" x="409" y="30" width="113" height="20"/>
+				<reportElement uuid="c2f969ff-bdec-4975-a6d4-6f4224c18c69" x="407" y="90" width="113" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Ananta]]></text>
+				<text><![CDATA[Sahata]]></text>
 			</staticText>
-			<line>
-				<reportElement uuid="e780ec22-5ae1-400c-b77f-e2e0970a68ca" x="409" y="51" width="113" height="1"/>
-			</line>
 			<staticText>
-				<reportElement uuid="c2f969ff-bdec-4975-a6d4-6f4224c18c69" x="409" y="51" width="113" height="20"/>
+				<reportElement uuid="c2f969ff-bdec-4975-a6d4-6f4224c18c69" x="400" y="23" width="126" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>

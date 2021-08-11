@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd694c30-b264-446b-a1dd-30ecc702c4cf">
 	<property name="ireport.zoom" value="1.6105100000000019"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="351"/>
+	<property name="ireport.y" value="353"/>
 	<parameter name="id" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -138,11 +138,11 @@ Jawa Barat 16164
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="190" splitType="Stretch">
+		<band height="175" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="f82a1a21-1959-4bc9-aa5a-8f27786a5be8" x="18" y="99" width="100" height="20"/>
-				<textElement/>
-				<text><![CDATA[Head Officer]]></text>
+				<reportElement uuid="f82a1a21-1959-4bc9-aa5a-8f27786a5be8" x="16" y="94" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Operation Manager]]></text>
 			</staticText>
 			<textField pattern="dd MMMMM yyyy">
 				<reportElement uuid="6d7b5f1a-3c68-4465-bcbb-dd78e0f5b4c7" x="47" y="68" width="113" height="20"/>
@@ -161,10 +161,10 @@ Jawa Barat 16164
 			<staticText>
 				<reportElement uuid="b247bd21-717f-411c-8711-83dd5de9dcd6" x="6" y="38" width="536" height="20"/>
 				<textElement/>
-				<text><![CDATA[Demikian surat jalan barang ini dibuat sebagai bukti yang sah dan dapat digunakan untuk kepetningan tertentu]]></text>
+				<text><![CDATA[Demikian surat jalan barang ini dibuat sebagai bukti yang sah dan dapat digunakan untuk kepentingan tertentu]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="bc5dd6f3-a201-4f5a-b259-835b41ef1fa9" x="442" y="99" width="100" height="20"/>
+				<reportElement uuid="bc5dd6f3-a201-4f5a-b259-835b41ef1fa9" x="385" y="95" width="100" height="20"/>
 				<textElement/>
 				<text><![CDATA[Penerima]]></text>
 			</staticText>
@@ -188,6 +188,11 @@ Jawa Barat 16164
 					<font isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total Barang :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f82a1a21-1959-4bc9-aa5a-8f27786a5be8" x="16" y="153" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Sahata]]></text>
 			</staticText>
 		</band>
 	</columnFooter>
