@@ -184,10 +184,10 @@ public class DashProduksi extends javax.swing.JFrame {
         jScrollPane3.setViewportView(TabProPlan);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setText("Produksi - Planning");
+        jLabel4.setText("Produksi - WIP");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel5.setText("Produksi - WIP ");
+        jLabel5.setText("Produksi - Plan");
 
         TabProWIP.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

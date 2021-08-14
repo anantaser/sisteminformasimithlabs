@@ -518,27 +518,28 @@ public class Bahan extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
              {
-                sql = "INSERT INTO `bahan`(`kd_barang`, `nama_barang`, `satuan`, `stock`, `harga`, `kategori`) VALUES (?,?,?,?,?,?);";
+                sql = "INSERT INTO `bahan`(`kd_barang`, `nama_barang`, `satuan`, `stock`, `harga`, `kategori`,`supplier_name`) VALUES (?,?,?,?,?,?,?);";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1,tKodeBarang.getText());
                 stat.setString(2,tNamaBarang.getText());
                 stat.setString(3,cSatuan.getSelectedItem().toString());            
                 stat.setString(4,tStock.getText());
                 stat.setString(5,tHarga.getText());
-                stat.setString(6,cKategori.getSelectedItem().toString());          
+                stat.setString(6,cKategori.getSelectedItem().toString());
+                stat.setString(7,tNamaSupplier.getText());
                 stat.executeUpdate();
                 tKodeBarang.requestFocus();
                 dataTableStock();
              }
              {
-                sql = "INSERT INTO `trx_bahan`(`kd_barang`, `supplier_name`, `purch_date`, `stock_trx`) VALUES (?,?,?,?);";
+                sql = "INSERT INTO `trx_bahan`(`kd_barang`,`purch_date`, `stock_trx`,`keterangan`) VALUES (?,?,?,?);";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(1,tKodeBarang.getText());
-                stat.setString(2,tNamaSupplier.getText());
                 SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf2.format(tTanggalBeli.getDate());
-                stat.setString(3, date);
-                stat.setString(4,tStock.getText());
+                stat.setString(2, date);
+                stat.setString(3,tStock.getText());
+                stat.setString(4,tKeterangan.getText());
                 stat.executeUpdate();
                 dataTableStock();
              }

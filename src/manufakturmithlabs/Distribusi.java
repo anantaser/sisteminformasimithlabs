@@ -639,7 +639,7 @@ public class Distribusi extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{                       
              {
-                sql = "INSERT INTO `distribusi`(`id_distribusi`, `kode_barang`, `qty`, `nama_tujuan`, `no_hp_tujuan`, `alamat_tujuan`, `tanggal`) VALUES (?,?,?,'','','',?);";
+                sql = "INSERT INTO `distribusi`(`id_distribusi`, `kode_barang`, `qty`, `nama_tujuan`, `no_hp_tujuan`, `alamat_tujuan`, `tanggal`, `status`,`tanggal_diterima`) VALUES (?,?,?,'','','',?,'Proses',?);";
                 java.sql.PreparedStatement stat = con.prepareStatement(sql);
                 stat.setString(2,cKodeBarang.getSelectedItem().toString());
                 stat.setString(3,tQtySend.getText());
@@ -647,6 +647,7 @@ public class Distribusi extends javax.swing.JFrame {
                 SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf2.format(new Date());
                 stat.setString(4,date);
+                stat.setString(5,date);
                 stat.executeUpdate();
              }
              {

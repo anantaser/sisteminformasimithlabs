@@ -12,9 +12,14 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/CetakSuratJalan.jrxml</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/CetakTandaTerimaBarang.jrxml</file>
-            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/ManufakturMithlabs.java</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanDistribusi.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanRencanaProduksi.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanSelect.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanBahan.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanProduksi.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanProduk.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/LaporanTransaksiBahan.jrxml</file>
+            <file>file:/C:/Users/Mithlabs/Documents/NetBeansProjects/ManufakturMithlabs/src/manufakturmithlabs/Laporan.java</file>
         </group>
     </open-files>
 </project-private>
