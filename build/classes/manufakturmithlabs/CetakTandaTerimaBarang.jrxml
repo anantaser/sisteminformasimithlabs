@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6901885-ddb7-4c7c-ae2b-329b5fceedfd">
 	<property name="ireport.zoom" value="1.210000000000002"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="25"/>
 	<style name="Heading 1" fontSize="16" isBold="true"/>
 	<parameter name="id" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -89,11 +89,6 @@ Jawa Barat 16164
 				<text><![CDATA[Dengan ini kami terima barang sebagai berikut :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="1d1d0cd5-8338-42aa-9329-68a95a403a65" x="9" y="54" width="100" height="17"/>
-				<textElement verticalAlignment="Middle"/>
-				<text><![CDATA[Nama Barang 	:]]></text>
-			</staticText>
-			<staticText>
 				<reportElement uuid="1d1d0cd5-8338-42aa-9329-68a95a403a65" x="-366" y="34" width="100" height="20"/>
 				<textElement/>
 				<text><![CDATA[Nama :]]></text>
@@ -109,7 +104,7 @@ Jawa Barat 16164
 				<text><![CDATA[SKU Barang 	:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="2be1317d-e7cb-459a-b303-30b445085a16" x="9" y="71" width="100" height="16"/>
+				<reportElement uuid="2be1317d-e7cb-459a-b303-30b445085a16" x="9" y="57" width="100" height="16"/>
 				<textElement/>
 				<text><![CDATA[Jumlah		:]]></text>
 			</staticText>
@@ -119,7 +114,7 @@ Jawa Barat 16164
 				<textFieldExpression><![CDATA[$F{trx_bahan_kd_barang}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="d3769805-c315-426d-ab21-1b138e5969a8" x="109" y="71" width="120" height="16"/>
+				<reportElement uuid="d3769805-c315-426d-ab21-1b138e5969a8" x="109" y="57" width="120" height="16"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{trx_bahan_stock_trx}]]></textFieldExpression>
 			</textField>

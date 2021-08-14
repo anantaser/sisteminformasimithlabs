@@ -171,7 +171,7 @@
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="92" splitType="Stretch">
+		<band height="126" splitType="Stretch">
 			<line>
 				<reportElement uuid="40d6c5a8-886d-4fb4-bf1e-546ba70451d7" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
 				<graphicElement>
@@ -193,22 +193,19 @@
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="446" y="39" width="56" height="21"/>
+				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="451" y="100" width="56" height="21"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="12"/>
+					<font size="12" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Ananta]]></text>
+				<text><![CDATA[Sahata]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="419" y="60" width="106" height="21"/>
+				<reportElement uuid="f361e1de-0209-4c95-a24e-c00c30eff496" x="425" y="33" width="106" height="21"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Operation Manager]]></text>
 			</staticText>
-			<line>
-				<reportElement uuid="b9bc9ee6-98d2-4afc-9ba2-ef5f8a9f38a1" x="425" y="60" width="100" height="1"/>
-			</line>
 		</band>
 	</columnFooter>
 	<pageFooter>
